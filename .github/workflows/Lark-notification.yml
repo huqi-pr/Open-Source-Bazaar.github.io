@@ -36,7 +36,7 @@ jobs:
         if: ${{ contains(steps.message.outputs.content, ':') }}
         uses: Comori/feishu@v0.0.3
         with:
-          url: ${{ secrets.LARK_CHATBOT_HOOK_URL }}
+          webhook-url: ${{ secrets.LARK_CHATBOT_HOOK_URL }}
           msg_type: card
           content: |
             ${{ steps.message.outputs.content }}
