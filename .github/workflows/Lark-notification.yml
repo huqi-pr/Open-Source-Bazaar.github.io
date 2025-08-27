@@ -34,9 +34,9 @@ jobs:
 
       - name: Send message to Lark
         if: ${{ contains(steps.message.outputs.content, ':') }}
-        uses: foxundermoon/feishu-action@v2
+        uses: Comori/feishu@v0.0.3
         with:
           url: ${{ secrets.LARK_CHATBOT_HOOK_URL }}
-          msg_type: post
+          msg_type: card
           content: |
             ${{ steps.message.outputs.content }}
